@@ -37,6 +37,13 @@ class Main extends React.Component {
                                     <FormHelperText id="waist">Soldier wasit circumference in inches.</FormHelperText>
                             </FormControl>
                         </Grid>
+                        <Grid item xs={12}>
+                            <FormControl>
+                                    <InputLabel htmlFor="abfc_wc">Hip Circumference</InputLabel>
+                                    <Input id="abfc_hc" aria-describedby="hip"  onChange={this.props.handleChange} />
+                                    <FormHelperText id="hip">Soldier hip circumference in inches.</FormHelperText>
+                            </FormControl>
+                        </Grid>
                     </Grid>
                 </Container>
             </main>
