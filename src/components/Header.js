@@ -25,7 +25,7 @@ class Header extends React.Component {
                 <MenuIcon />
                 </IconButton>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                Army Body Fat Calculator (Male)
+                Army Body Fat Calculator (Female)
                 </Typography>
             </Toolbar>
             </AppBar>
