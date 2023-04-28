@@ -16,6 +16,8 @@ const darkTheme = createTheme({
   },
 });
 
+// import reactDom from 'react-dom';
+
 class App extends React.Component {
   
   constructor() {
@@ -24,11 +26,13 @@ class App extends React.Component {
       count: {
         hgt: '0',
         nc: '0.0',
+        hc: '0.0',
         wc: '0.0'
       },
       score: {
         hgt: '0',
         nc: '0',
+        hc: '0',
         wc: '0',
         bf: '0'
       }
@@ -52,17 +56,18 @@ class App extends React.Component {
       count.hgt = value;
     } else if ('nc' === id) {
       count.nc = value;
+    } else if ('hc' === id) {
+      count.hc = value;
     } else if ('wc' === id) {
       count.wc = value;
     } else {
       alert('Something went wrong.');
     }
     
-    if (count.wc >= 1 && count.hgt >= 1 && count.nc >= 1) {
+    if (count.wc >= 1 && count.hgt >= 1 && count.hc >=1 && count.nc >= 1) {
       // Male Formula
-      score.bf = parseFloat((86.010 * Math.log10(+count.wc - +count.nc)) - [70.041 * Math.log10(+count.hgt)] + 36.76).toFixed(2);
-      // Female Formula
-      // score.bf = parseFloat((163.205 * Math.log10(+count.wc + +count.hc - +count.nc)) - [97.684 * Math.log10(+count.hgt)] - 78.387).toFixed(2);
+      // score.bf = parseFloat((86.010 * Math.log10(+count.wc - +count.nc)) - [70.041 * Math.log10(+count.hgt)] + 36.76).toFixed(2);
+      score.bf = parseFloat((163.205 * Math.log10(+count.wc + +count.hc - +count.nc)) - [97.684 * Math.log10(+count.hgt)] - 78.387).toFixed(2);
     } else {
       score.bf = 0
     }
