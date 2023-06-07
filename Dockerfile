@@ -3,7 +3,6 @@ WORKDIR /run/app
 COPY . /run/app
 
 RUN npm i && \
-    npm run build-css && \
     npm run build
 
 
